@@ -1,6 +1,6 @@
 {
     "curso": [
-      { "idCurso": 1,"profesor": "Maria Lili", "nombre": "Software 1", 
+      { "idCurso": 1,"profesor": "Maria Lili", "nombre": "Software 1", "color":"primary",
         "notas":[{
           "idNota": 1,
           "calificacion":4.8,
@@ -21,7 +21,7 @@
           "fecha":"01/04/2019"
         }]
       },
-      { "idCurso": 2,"profesor": "Carlos Gomes", "nombre": "Compiladores", 
+      { "idCurso": 2,"profesor": "Carlos Gomes", "nombre": "Compiladores", "color":"secondary",
         "notas":[{
           "idNota": 4,
           "calificacion":3.2,
@@ -42,7 +42,7 @@
           "fecha":"01/04/2019"
         }]
       },
-      { "idCurso": 3,"profesor": "Alexandra Gaona", "nombre": "Bases de datos", 
+      { "idCurso": 3,"profesor": "Alexandra Gaona", "nombre": "Bases de datos", "color":"success",
         "notas":[{
           "idNota": 7,
           "calificacion":4.4,

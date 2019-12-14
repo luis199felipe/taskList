@@ -8,7 +8,7 @@ import { MenuComponent } from './menu/menu.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { MateriasComponent } from './materias/materias.component';
-import { CursoComponent } from './curso/curso.component';
+import { CursoCardComponent } from './curso/cursoCard.component';
 
 import { DataService } from './data.service';
 
@@ -26,7 +26,7 @@ const routes: Routes = [
     AboutComponent,
     HomeComponent,
     MateriasComponent,
-    CursoComponent
+    CursoCardComponent
   ],
   imports: [
     BrowserModule,

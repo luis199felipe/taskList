@@ -9,7 +9,7 @@
 
         <div class="row justify-content-center">
 
-            <app-curso *ngFor="let curso of cursos" [nombre]="curso.nombre" [profesor]="curso.profesor"></app-curso>
+            <app-cursoCard *ngFor="let curso of cursos" [curso]="curso"></app-cursoCard>
         </div>
     </div>
 </div>

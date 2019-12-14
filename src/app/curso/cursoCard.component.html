@@ -1,12 +1,12 @@
 <div class="col" >
-    <div class=" card border-primary mb-3 " style="max-width: 18rem;">
+    <div class=" card border-{{curso.color}} mb-3 " style="max-width: 18rem;">
         <div class="card-header text-center">
             <button type="button" class="btn btn-light">Editar</button> 
             &nbsp;
             <button type="button" class="btn btn-dark">Eliminar</button></div>
         <div class="card-body text-primary">
-            <h4 class="card-title"><a href="">{{nombre}}</a></h4>
-            <h6 class="card-text">Profesor:</h6><div class="card-text">{{profesor}}</div>
+            <h4 class="card-title"><a href="/materias/{{curso.idCurso}}">{{curso.nombre}}</a></h4>
+            <h6 class="card-text">Profesor:</h6><div class="card-text">{{curso.profesor}}</div>
         </div>
     </div>
 </div>

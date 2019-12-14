@@ -1,0 +1,59 @@
+{
+    "curso": [
+      { "profesor": "Maria Lili", "nombre": "Software 1", 
+        "notas":[{
+          "calificacion":4.8,
+          "nombre":"Parcial 1",
+          "descripcion":"Nota del 25%",
+          "fecha":"01/01/2019"
+        },{
+          "calificacion":4.0,
+          "nombre":"Parcial 2",
+          "descripcion":"Nota del 25%",
+          "fecha":"01/03/2019"
+        },{
+          "calificacion":4.5,
+          "nombre":"Parcial 3",
+          "descripcion":"Nota del 25%",
+          "fecha":"01/04/2019"
+        }]
+      },
+      { "profesor": "Carlos Gomes", "nombre": "Compiladores", 
+        "notas":[{
+          "calificacion":3.2,
+          "nombre":"Parcial 1",
+          "descripcion":"Nota del 25%",
+          "fecha":"01/01/2019"
+        },{
+          "calificacion":3.5,
+          "nombre":"Parcial 2",
+          "descripcion":"Nota del 25%",
+          "fecha":"01/03/2019"
+        },{
+          "calificacion":3.9,
+          "nombre":"Parcial 3",
+          "descripcion":"Nota del 25%",
+          "fecha":"01/04/2019"
+        }]
+      },
+      { "profesor": "Alexandra Gaona", "nombre": "Bases de datos", 
+        "notas":[{
+          "calificacion":4.4,
+          "nombre":"Parcial 1",
+          "descripcion":"Nota del 25%",
+          "fecha":"01/01/2019"
+        },{
+          "calificacion":4.2,
+          "nombre":"Parcial 2",
+          "descripcion":"Nota del 25%",
+          "fecha":"01/03/2019"
+        },{
+          "calificacion":4.1,
+          "nombre":"Parcial 3",
+          "descripcion":"Nota del 25%",
+          "fecha":"01/04/2019"
+        }]
+      }
+    ]
+  }
+  

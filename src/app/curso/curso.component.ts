@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Curso } from "../curso.interface";
 
 @Component({
@@ -8,13 +8,17 @@ import { Curso } from "../curso.interface";
 })
 export class CursoComponent implements OnInit {
 
-  curso:Curso;
+  @Input()
+  nombre:string;
+  @Input()
+  profesor:string;
 
   constructor() { 
     
   }
 
   ngOnInit() {
+    console.log("Este es mi nombre "+this.profesor)
   }
 
 }

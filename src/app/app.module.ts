@@ -33,6 +33,7 @@ const routes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(routes)
   ],
+  
   providers: [ DataService ],
   bootstrap: [AppComponent]
 })

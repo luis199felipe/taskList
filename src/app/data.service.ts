@@ -8,7 +8,7 @@ import { Curso } from './curso.interface';
 export class DataService {
 
   constructor(private http:HttpClient) {
-    console.error("Servicio funcionando");
+    
   }
 
   getData(){ 

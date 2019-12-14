@@ -12,10 +12,10 @@ export class MateriasComponent implements OnInit {
   cursos:Curso[];
 
   constructor(private data:DataService) {
-
     this.data.getData().subscribe(data=>{
-      console.log(data);
+      
       this.cursos = data;
+      console.log(this.cursos);
     })
   }
 

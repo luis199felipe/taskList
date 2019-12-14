@@ -1,53 +1,62 @@
 {
     "curso": [
-      { "profesor": "Maria Lili", "nombre": "Software 1", 
+      { "idCurso": 1,"profesor": "Maria Lili", "nombre": "Software 1", 
         "notas":[{
+          "idNota": 1,
           "calificacion":4.8,
           "nombre":"Parcial 1",
           "descripcion":"Nota del 25%",
           "fecha":"01/01/2019"
         },{
+          "idNota": 2,
           "calificacion":4.0,
           "nombre":"Parcial 2",
           "descripcion":"Nota del 25%",
           "fecha":"01/03/2019"
         },{
+          "idNota": 3,
           "calificacion":4.5,
           "nombre":"Parcial 3",
           "descripcion":"Nota del 25%",
           "fecha":"01/04/2019"
         }]
       },
-      { "profesor": "Carlos Gomes", "nombre": "Compiladores", 
+      { "idCurso": 2,"profesor": "Carlos Gomes", "nombre": "Compiladores", 
         "notas":[{
+          "idNota": 4,
           "calificacion":3.2,
           "nombre":"Parcial 1",
           "descripcion":"Nota del 25%",
           "fecha":"01/01/2019"
         },{
+          "idNota": 5,
           "calificacion":3.5,
           "nombre":"Parcial 2",
           "descripcion":"Nota del 25%",
           "fecha":"01/03/2019"
         },{
+          "idNota": 6,
           "calificacion":3.9,
           "nombre":"Parcial 3",
           "descripcion":"Nota del 25%",
           "fecha":"01/04/2019"
         }]
       },
-      { "profesor": "Alexandra Gaona", "nombre": "Bases de datos", 
+      { "idCurso": 3,"profesor": "Alexandra Gaona", "nombre": "Bases de datos", 
         "notas":[{
+          "idNota": 7,
           "calificacion":4.4,
           "nombre":"Parcial 1",
           "descripcion":"Nota del 25%",
           "fecha":"01/01/2019"
         },{
+          "idNota": 8,
           "calificacion":4.2,
           "nombre":"Parcial 2",
           "descripcion":"Nota del 25%",
           "fecha":"01/03/2019"
         },{
+          "idNota": 9,
           "calificacion":4.1,
           "nombre":"Parcial 3",
           "descripcion":"Nota del 25%",

@@ -15,6 +15,7 @@ export class MateriasComponent implements OnInit {
 
     this.data.getData().subscribe(data=>{
       console.log(data);
+      this.cursos = data;
     })
   }
 

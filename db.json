@@ -62,6 +62,69 @@
           "descripcion":"Nota del 25%",
           "fecha":"01/04/2019"
         }]
+      },
+      { "idCurso": 4,"profesor": "Gerardo", "nombre": "Procesadores", "color":"danger",
+        "notas":[{
+          "idNota": 10,
+          "calificacion":4.9,
+          "nombre":"Parcial 1",
+          "descripcion":"Nota del 25%",
+          "fecha":"01/01/2019"
+        },{
+          "idNota": 11,
+          "calificacion":4.7,
+          "nombre":"Parcial 2",
+          "descripcion":"Nota del 25%",
+          "fecha":"01/03/2019"
+        },{
+          "idNota": 12,
+          "calificacion":4.8,
+          "nombre":"Parcial 3",
+          "descripcion":"Nota del 25%",
+          "fecha":"01/04/2019"
+        }]
+      },
+      { "idCurso": 5,"profesor": "Maycol Acevedo", "nombre": "Sistemas Operativos", "color":"warning",
+        "notas":[{
+          "idNota": 13,
+          "calificacion":4.4,
+          "nombre":"Parcial 1",
+          "descripcion":"Nota del 25%",
+          "fecha":"01/01/2019"
+        },{
+          "idNota": 14,
+          "calificacion":4.1,
+          "nombre":"Parcial 2",
+          "descripcion":"Nota del 25%",
+          "fecha":"01/03/2019"
+        },{
+          "idNota": 15,
+          "calificacion":4.6,
+          "nombre":"Parcial 3",
+          "descripcion":"Nota del 25%",
+          "fecha":"01/04/2019"
+        }]
+      },
+      { "idCurso": 6,"profesor": "Sonia Jaramillo", "nombre": "Electiva Profesional 1", "color":"info",
+        "notas":[{
+          "idNota": 16,
+          "calificacion":4.0,
+          "nombre":"Parcial 1",
+          "descripcion":"Nota del 25%",
+          "fecha":"01/01/2019"
+        },{
+          "idNota": 17,
+          "calificacion":4.1,
+          "nombre":"Parcial 2",
+          "descripcion":"Nota del 25%",
+          "fecha":"01/03/2019"
+        },{
+          "idNota": 18,
+          "calificacion":4.5,
+          "nombre":"Parcial 3",
+          "descripcion":"Nota del 25%",
+          "fecha":"01/04/2019"
+        }]
       }
     ]
   }

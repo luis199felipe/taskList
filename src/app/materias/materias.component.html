@@ -7,9 +7,8 @@
         <p class="card-text">Aquí encontrará sus materias.</p>
         <br>
 
-        <div class="row justify-content-center">
-
-            <app-cursoCard *ngFor="let curso of cursos" [curso]="curso"></app-cursoCard>
+        <div class="row justify-content-center" *ngFor="let i of filasArray" style="margin-bottom: 2rem;">
+            <app-cursoCard *ngFor="let curso of matrix[i]" [curso]="curso"></app-cursoCard>
         </div>
     </div>
 </div>

@@ -1,131 +1,274 @@
 {
-    "curso": [
-      { "idCurso": 1,"profesor": "Maria Lili", "nombre": "Software 1", "color":"primary",
-        "notas":[{
-          "idNota": 1,
-          "calificacion":4.8,
-          "nombre":"Parcial 1",
-          "descripcion":"Nota del 25%",
-          "fecha":"01/01/2019"
-        },{
-          "idNota": 2,
-          "calificacion":4.0,
-          "nombre":"Parcial 2",
-          "descripcion":"Nota del 25%",
-          "fecha":"01/03/2019"
-        },{
-          "idNota": 3,
-          "calificacion":4.5,
-          "nombre":"Parcial 3",
-          "descripcion":"Nota del 25%",
-          "fecha":"01/04/2019"
-        }]
-      },
-      { "idCurso": 2,"profesor": "Carlos Gomes", "nombre": "Compiladores", "color":"secondary",
-        "notas":[{
-          "idNota": 4,
-          "calificacion":3.2,
-          "nombre":"Parcial 1",
-          "descripcion":"Nota del 25%",
-          "fecha":"01/01/2019"
-        },{
-          "idNota": 5,
-          "calificacion":3.5,
-          "nombre":"Parcial 2",
-          "descripcion":"Nota del 25%",
-          "fecha":"01/03/2019"
-        },{
-          "idNota": 6,
-          "calificacion":3.9,
-          "nombre":"Parcial 3",
-          "descripcion":"Nota del 25%",
-          "fecha":"01/04/2019"
-        }]
-      },
-      { "idCurso": 3,"profesor": "Alexandra Gaona", "nombre": "Bases de datos", "color":"success",
-        "notas":[{
-          "idNota": 7,
-          "calificacion":4.4,
-          "nombre":"Parcial 1",
-          "descripcion":"Nota del 25%",
-          "fecha":"01/01/2019"
-        },{
-          "idNota": 8,
-          "calificacion":4.2,
-          "nombre":"Parcial 2",
-          "descripcion":"Nota del 25%",
-          "fecha":"01/03/2019"
-        },{
-          "idNota": 9,
-          "calificacion":4.1,
-          "nombre":"Parcial 3",
-          "descripcion":"Nota del 25%",
-          "fecha":"01/04/2019"
-        }]
-      },
-      { "idCurso": 4,"profesor": "Gerardo", "nombre": "Procesadores", "color":"danger",
-        "notas":[{
-          "idNota": 10,
-          "calificacion":4.9,
-          "nombre":"Parcial 1",
-          "descripcion":"Nota del 25%",
-          "fecha":"01/01/2019"
-        },{
-          "idNota": 11,
-          "calificacion":4.7,
-          "nombre":"Parcial 2",
-          "descripcion":"Nota del 25%",
-          "fecha":"01/03/2019"
-        },{
-          "idNota": 12,
-          "calificacion":4.8,
-          "nombre":"Parcial 3",
-          "descripcion":"Nota del 25%",
-          "fecha":"01/04/2019"
-        }]
-      },
-      { "idCurso": 5,"profesor": "Maycol Acevedo", "nombre": "Sistemas Operativos", "color":"warning",
-        "notas":[{
-          "idNota": 13,
-          "calificacion":4.4,
-          "nombre":"Parcial 1",
-          "descripcion":"Nota del 25%",
-          "fecha":"01/01/2019"
-        },{
-          "idNota": 14,
-          "calificacion":4.1,
-          "nombre":"Parcial 2",
-          "descripcion":"Nota del 25%",
-          "fecha":"01/03/2019"
-        },{
-          "idNota": 15,
-          "calificacion":4.6,
-          "nombre":"Parcial 3",
-          "descripcion":"Nota del 25%",
-          "fecha":"01/04/2019"
-        }]
-      },
-      { "idCurso": 6,"profesor": "Sonia Jaramillo", "nombre": "Electiva Profesional 1", "color":"info",
-        "notas":[{
-          "idNota": 16,
-          "calificacion":4.0,
-          "nombre":"Parcial 1",
-          "descripcion":"Nota del 25%",
-          "fecha":"01/01/2019"
-        },{
-          "idNota": 17,
-          "calificacion":4.1,
-          "nombre":"Parcial 2",
-          "descripcion":"Nota del 25%",
-          "fecha":"01/03/2019"
-        },{
-          "idNota": 18,
-          "calificacion":4.5,
-          "nombre":"Parcial 3",
-          "descripcion":"Nota del 25%",
-          "fecha":"01/04/2019"
-        }]
-      }
-    ]
-  }
-  
+  "curso": [
+    {
+      "idCurso": 1,
+      "profesor": "Maria Lili",
+      "nombre": "Software 1",
+      "color": "primary",
+      "Parciales": [
+        {
+          "idParcial": 1,
+          "calificacion": 4.8,
+          "nombre": "Parcial 1",
+          "descripcion": "Parcial del 25%",
+          "fecha": "01/01/2019"
+        },
+        {
+          "idParcial": 2,
+          "calificacion": 4.0,
+          "nombre": "Parcial 2",
+          "descripcion": "Parcial del 25%",
+          "fecha": "01/03/2019"
+        },
+        {
+          "idParcial": 3,
+          "calificacion": 4.5,
+          "nombre": "Parcial 3",
+          "descripcion": "Parcial del 25%",
+          "fecha": "01/04/2019"
+        }
+      ],
+      "Tareas": [
+        {
+          "idTarea": 1,
+          "calificacion": 4,
+          "nombre": "Tarea Diapositiva",
+          "descripcion": "Tarea sobre",
+          "fecha": "02/04/2019"
+        },
+        {
+          "idTarea": 2,
+          "calificacion": 3,
+          "nombre": "Tarea diagrama",
+          "descripcion": "Tarea sobre",
+          "fecha": "02/04/2019"
+        }
+      ]
+    },
+    {
+      "idCurso": 2,
+      "profesor": "Carlos Gomes",
+      "nombre": "Compiladores",
+      "color": "secondary",
+      "Parciales": [
+        {
+          "idParcial": 4,
+          "calificacion": 3.2,
+          "nombre": "Parcial 1",
+          "descripcion": "Parcial del 25%",
+          "fecha": "01/01/2019"
+        },
+        {
+          "idParcial": 5,
+          "calificacion": 3.5,
+          "nombre": "Parcial 2",
+          "descripcion": "Parcial del 25%",
+          "fecha": "01/03/2019"
+        },
+        {
+          "idParcial": 6,
+          "calificacion": 3.9,
+          "nombre": "Parcial 3",
+          "descripcion": "Parcial del 25%",
+          "fecha": "01/04/2019"
+        }
+      ],
+      "Tareas": [
+        {
+          "idTarea": 3,
+          "calificacion": 3.5,
+          "nombre": "Tarea Sitactico",
+          "descripcion": "Tarea sobre",
+          "fecha": "02/04/2019"
+        },
+        {
+          "idTarea": 4,
+          "calificacion": 4.5,
+          "nombre": "Tarea Semantico",
+          "descripcion": "Tarea sobre",
+          "fecha": "02/04/2019"
+        }
+      ]
+    },
+    {
+      "idCurso": 3,
+      "profesor": "Alexandra Gaona",
+      "nombre": "Bases de datos",
+      "color": "success",
+      "Parciales": [
+        {
+          "idParcial": 7,
+          "calificacion": 4.4,
+          "nombre": "Parcial 1",
+          "descripcion": "Parcial del 25%",
+          "fecha": "01/01/2019"
+        },
+        {
+          "idParcial": 8,
+          "calificacion": 4.2,
+          "nombre": "Parcial 2",
+          "descripcion": "Parcial del 25%",
+          "fecha": "01/03/2019"
+        },
+        {
+          "idParcial": 9,
+          "calificacion": 4.1,
+          "nombre": "Parcial 3",
+          "descripcion": "Parcial del 25%",
+          "fecha": "01/04/2019"
+        }
+      ],
+      "Tareas": [
+        {
+          "idTarea": 5,
+          "calificacion": 3.4,
+          "nombre": "Tarea SQL",
+          "descripcion": "Tarea sobre",
+          "fecha": "02/04/2019"
+        },
+        {
+          "idTarea": 6,
+          "calificacion": 4.5,
+          "nombre": "Tarea Algebra relacional",
+          "descripcion": "Tarea sobre",
+          "fecha": "02/04/2019"
+        }
+      ]
+    },
+    {
+      "idCurso": 4,
+      "profesor": "Gerardo",
+      "nombre": "Procesadores",
+      "color": "danger",
+      "Parciales": [
+        {
+          "idParcial": 10,
+          "calificacion": 4.9,
+          "nombre": "Parcial 1",
+          "descripcion": "Parcial del 25%",
+          "fecha": "01/01/2019"
+        },
+        {
+          "idParcial": 11,
+          "calificacion": 4.7,
+          "nombre": "Parcial 2",
+          "descripcion": "Parcial del 25%",
+          "fecha": "01/03/2019"
+        },
+        {
+          "idParcial": 12,
+          "calificacion": 4.8,
+          "nombre": "Parcial 3",
+          "descripcion": "Parcial del 25%",
+          "fecha": "01/04/2019"
+        }
+      ],
+      "Tareas": [
+        {
+          "idTarea": 5,
+          "calificacion": 5,
+          "nombre": "Tarea x86",
+          "descripcion": "Tarea sobre",
+          "fecha": "02/04/2019"
+        },
+        {
+          "idTarea": 6,
+          "calificacion": 4.9,
+          "nombre": "Tarea ARM",
+          "descripcion": "Tarea sobre",
+          "fecha": "02/04/2019"
+        }
+      ]
+    },
+    {
+      "idCurso": 5,
+      "profesor": "Maycol Acevedo",
+      "nombre": "Sistemas Operativos",
+      "color": "warning",
+      "Parciales": [
+        {
+          "idParcial": 13,
+          "calificacion": 4.4,
+          "nombre": "Parcial 1",
+          "descripcion": "Parcial del 25%",
+          "fecha": "01/01/2019"
+        },
+        {
+          "idParcial": 14,
+          "calificacion": 4.1,
+          "nombre": "Parcial 2",
+          "descripcion": "Parcial del 25%",
+          "fecha": "01/03/2019"
+        },
+        {
+          "idParcial": 15,
+          "calificacion": 4.6,
+          "nombre": "Parcial 3",
+          "descripcion": "Parcial del 25%",
+          "fecha": "01/04/2019"
+        }
+      ],
+      "Tareas": [
+        {
+          "idTarea": 7,
+          "calificacion": 3,
+          "nombre": "Tarea MBR",
+          "descripcion": "Tarea sobre",
+          "fecha": "02/04/2019"
+        },
+        {
+          "idTarea": 8,
+          "calificacion": 2,
+          "nombre": "Tarea Servidor",
+          "descripcion": "Tarea sobre",
+          "fecha": "02/04/2019"
+        }
+      ]
+    },
+    {
+      "idCurso": 6,
+      "profesor": "Sonia Jaramillo",
+      "nombre": "Electiva Profesional 1",
+      "color": "info",
+      "Parciales": [
+        {
+          "idParcial": 16,
+          "calificacion": 4.0,
+          "nombre": "Parcial 1",
+          "descripcion": "Parcial del 25%",
+          "fecha": "01/01/2019"
+        },
+        {
+          "idParcial": 17,
+          "calificacion": 4.1,
+          "nombre": "Parcial 2",
+          "descripcion": "Parcial del 25%",
+          "fecha": "01/03/2019"
+        },
+        {
+          "idParcial": 18,
+          "calificacion": 4.5,
+          "nombre": "Parcial 3",
+          "descripcion": "Parcial del 25%",
+          "fecha": "01/04/2019"
+        }
+      ],
+      "Tareas": [
+        {
+          "idTarea": 9,
+          "calificacion": 4.2,
+          "nombre": "Tarea Buscador",
+          "descripcion": "Tarea sobre",
+          "fecha": "02/04/2019"
+        },
+        {
+          "idTarea": 10,
+          "calificacion": 4.3,
+          "nombre": "Tarea Ontologias",
+          "descripcion": "Tarea sobre",
+          "fecha": "02/04/2019"
+        }
+      ]
+    }
+  ]
+}

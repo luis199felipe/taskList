@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -14,10 +15,10 @@ import { DataService } from './data.service';
 import { CursoComponent } from './curso/curso.component';
 
 const routes: Routes = [
-  {path:"", component:HomeComponent},
-  {path:"materias", component:MateriasComponent},
-  {path:"materias/:idMateria", component:HomeComponent},
-  {path:"about", component:AboutComponent}
+  { path: '', component: HomeComponent },
+  { path: 'materias', component: MateriasComponent },
+  { path: 'curso/:idCurso', component: CursoComponent },
+  { path: 'about', component: AboutComponent }
 ];
 
 @NgModule({
@@ -33,10 +34,11 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(routes)
   ],
-  
-  providers: [ DataService ],
+
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

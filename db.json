@@ -10,21 +10,21 @@
           "idParcial": 1,
           "calificacion": 4.8,
           "nombre": "Parcial 1",
-          "descripcion": "Parcial del 25%",
+          "porcentaje": 25,
           "fecha": "01/01/2019"
         },
         {
           "idParcial": 2,
           "calificacion": 4.0,
           "nombre": "Parcial 2",
-          "descripcion": "Parcial del 25%",
+          "porcentaje": 25,
           "fecha": "01/03/2019"
         },
         {
           "idParcial": 3,
           "calificacion": 4.5,
           "nombre": "Parcial 3",
-          "descripcion": "Parcial del 25%",
+          "porcentaje": 25,
           "fecha": "01/04/2019"
         }
       ],
@@ -55,21 +55,21 @@
           "idParcial": 4,
           "calificacion": 3.2,
           "nombre": "Parcial 1",
-          "descripcion": "Parcial del 25%",
+          "porcentaje": 25,
           "fecha": "01/01/2019"
         },
         {
           "idParcial": 5,
           "calificacion": 3.5,
           "nombre": "Parcial 2",
-          "descripcion": "Parcial del 25%",
+          "porcentaje": 25,
           "fecha": "01/03/2019"
         },
         {
           "idParcial": 6,
           "calificacion": 3.9,
           "nombre": "Parcial 3",
-          "descripcion": "Parcial del 25%",
+          "porcentaje": 25,
           "fecha": "01/04/2019"
         }
       ],
@@ -100,21 +100,21 @@
           "idParcial": 7,
           "calificacion": 4.4,
           "nombre": "Parcial 1",
-          "descripcion": "Parcial del 25%",
+          "porcentaje": 25,
           "fecha": "01/01/2019"
         },
         {
           "idParcial": 8,
           "calificacion": 4.2,
           "nombre": "Parcial 2",
-          "descripcion": "Parcial del 25%",
+          "porcentaje": 25,
           "fecha": "01/03/2019"
         },
         {
           "idParcial": 9,
           "calificacion": 4.1,
           "nombre": "Parcial 3",
-          "descripcion": "Parcial del 25%",
+          "porcentaje": 25,
           "fecha": "01/04/2019"
         }
       ],
@@ -145,21 +145,21 @@
           "idParcial": 10,
           "calificacion": 4.9,
           "nombre": "Parcial 1",
-          "descripcion": "Parcial del 25%",
+          "porcentaje": 25,
           "fecha": "01/01/2019"
         },
         {
           "idParcial": 11,
           "calificacion": 4.7,
           "nombre": "Parcial 2",
-          "descripcion": "Parcial del 25%",
+          "porcentaje": 25,
           "fecha": "01/03/2019"
         },
         {
           "idParcial": 12,
           "calificacion": 4.8,
           "nombre": "Parcial 3",
-          "descripcion": "Parcial del 25%",
+          "porcentaje": 25,
           "fecha": "01/04/2019"
         }
       ],
@@ -190,21 +190,21 @@
           "idParcial": 13,
           "calificacion": 4.4,
           "nombre": "Parcial 1",
-          "descripcion": "Parcial del 25%",
+          "porcentaje": 25,
           "fecha": "01/01/2019"
         },
         {
           "idParcial": 14,
           "calificacion": 4.1,
           "nombre": "Parcial 2",
-          "descripcion": "Parcial del 25%",
+          "porcentaje": 25,
           "fecha": "01/03/2019"
         },
         {
           "idParcial": 15,
           "calificacion": 4.6,
           "nombre": "Parcial 3",
-          "descripcion": "Parcial del 25%",
+          "porcentaje": 25,
           "fecha": "01/04/2019"
         }
       ],
@@ -235,21 +235,21 @@
           "idParcial": 16,
           "calificacion": 4.0,
           "nombre": "Parcial 1",
-          "descripcion": "Parcial del 25%",
+          "porcentaje": 25,
           "fecha": "01/01/2019"
         },
         {
           "idParcial": 17,
           "calificacion": 4.1,
           "nombre": "Parcial 2",
-          "descripcion": "Parcial del 25%",
+          "porcentaje": 25,
           "fecha": "01/03/2019"
         },
         {
           "idParcial": 18,
           "calificacion": 4.5,
           "nombre": "Parcial 3",
-          "descripcion": "Parcial del 25%",
+          "porcentaje": 25,
           "fecha": "01/04/2019"
         }
       ],

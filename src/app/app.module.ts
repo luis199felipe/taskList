@@ -17,7 +17,8 @@ import { CursoComponent } from './curso/curso.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'materias', component: MateriasComponent },
-  { path: 'curso/:idCurso', component: CursoComponent },
+  { path: 'curso', component: CursoComponent },
+  { path: 'curso/:id', component: CursoComponent },
   { path: 'about', component: AboutComponent }
 ];
 

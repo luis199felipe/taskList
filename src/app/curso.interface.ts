@@ -1,11 +1,10 @@
-import { Nota } from "./nota.interface";
+import { Parcial } from './Parcial.interface';
+import { Tarea } from './Tarea.interface';
 
-export interface Curso{
+export interface Curso {
 
-    profesor:string;
-    nombreCurso:string;
-    notas:Nota[];
-
-    
-
+  profesor: string;
+  nombreCurso: string;
+  Parciales: Parcial[];
+  Tareas: Tarea[];
 }

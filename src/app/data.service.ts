@@ -7,11 +7,18 @@ import { Curso } from './curso.interface';
 })
 export class DataService {
 
-  constructor(private http:HttpClient) {
-    
+  constructor(private http: HttpClient) {
+
   }
 
-  getData(){ 
-      return this.http.get<Curso[]>('https://my-json-server.typicode.com/luis199felipe/taskList/curso');
+  getData() {
+    return this.http.get<Curso[]>('https://my-json-server.typicode.com/luis199felipe/taskList/curso');
+  }
+
+  getCurso(id) {
+    let r = this.http.get<Curso>('https://my-json-server.typicode.com/luis199felipe/taskList/curso/1');
+    console.log("response" + r);
+    return r;
+
   }
 }

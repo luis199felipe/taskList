@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Curso } from "../curso.interface";
-import { DataService } from "../data.service";
+import { Curso } from '../curso.interface';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-materias',
@@ -43,7 +43,7 @@ export class MateriasComponent implements OnInit {
         }
       }
     }
-    console.log("Matrix ", this.matrix);
+    console.log('Matrix ', this.matrix);
 
   }
 

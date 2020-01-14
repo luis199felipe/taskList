@@ -1,24 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { Curso } from '../curso.interface';
-import { DataService } from '../data.service';
+import { Curso } from './shared/curso.interface';
+import { CursoService } from './shared/curso.service';
 
 @Component({
-  selector: 'app-materias',
-  templateUrl: './materias.component.html',
-  styleUrls: ['./materias.component.css']
+  selector: 'app-cursos',
+  templateUrl: './cursos.component.html',
+  styleUrls: ['./cursos.component.css']
 })
-export class MateriasComponent implements OnInit {
+export class CursosComponent implements OnInit {
 
   cursos: Curso[];
   filasArray: number[];
   matrix: Curso[][] = [];
 
-  constructor(private data: DataService) {
+  constructor(private data: CursoService) {
     // tslint:disable-next-line: no-shadowed-variable
     this.data.getData().subscribe(data => {
 
       this.cursos = data;
-
       this.tablaDinamica();
     });
   }

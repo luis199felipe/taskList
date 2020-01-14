@@ -8,17 +8,24 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
-import { MateriasComponent } from './materias/materias.component';
-import { CursoCardComponent } from './cursoCard/cursoCard.component';
+import { CursosComponent } from './cursos/cursos.component';
+import { CursoCardComponent } from './cursos/cursoCard/cursoCard.component';
 
-import { DataService } from './data.service';
-import { CursoComponent } from './curso/curso.component';
+import { CursoService } from './cursos/shared/curso.service';
+import { CursoComponent } from './cursos/curso/curso.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'materias', component: MateriasComponent },
-  { path: 'curso', component: CursoComponent },
-  { path: 'curso/:id', component: CursoComponent },
+  { path: '', redirectTo: 'cursos', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'cursos', component: CursosComponent },
+  {
+    path: 'curso', children: [
+      { path: '', component: CursoComponent },
+      { path: ':id', component: CursoComponent },
+      { path: 'edit/:id', component: CursoComponent },
+    ]
+  },
   { path: 'about', component: AboutComponent }
 ];
 
@@ -28,7 +35,7 @@ const routes: Routes = [
     MenuComponent,
     AboutComponent,
     HomeComponent,
-    MateriasComponent,
+    CursosComponent,
     CursoCardComponent,
     CursoComponent
   ],
@@ -36,10 +43,11 @@ const routes: Routes = [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    BrowserAnimationsModule
   ],
 
-  providers: [DataService],
+  providers: [CursoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

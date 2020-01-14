@@ -1,0 +1,225 @@
+<br>
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      Curso
+    </div>
+    <div class="card-body">
+
+      <div class="row">
+        <div class="col">
+          <form *ngIf="data.formData" autocomplete="off" #form="ngForm">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label class="control-label" for="nombreCurso">Nombre</label>
+
+                <input type="text" name="nombreCurso" id="nombreCurso" class="form-control" #nombre="ngModel"
+                  [(ngModel)]="data.formData.nombre">
+
+              </div>
+              <div class="form-group col-md-6">
+                <label class="control-label" for="nombreCurso">Color</label>
+
+                <select class="custom-select" id="GroupSelectColor" #color="ngModel" [(ngModel)]="data.formData.color"
+                  name="color">
+                  <option selected>-Select-</option>
+                  <option value="0">Primary</option>
+                  <option value="1">Secondary</option>
+                  <option value="2">Danger</option>
+                  <option value="3">Warning</option>
+                </select>
+
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="nombreProfesor">Profesor</label>
+              <input type="text" name="nombreProfesor" id="nombreProfesor" class="form-control"
+                placeholder="Ingrese el profesor" [(ngModel)]="data.formData.profesor">
+            </div>
+          </form>
+        </div>
+        <div class="col">
+          <div class="form-group row">
+            <div class="col-sm-4">Parcial 1:</div>
+            <div class="col-sm-5"> <input type="text" class="form-control" name="parcial1" id="parcial1"
+                placeholder="4.5" readonly></div>
+            <div class="col-3"><button type="button" class="btn btn-primary">Editar</button></div>
+
+          </div>
+
+          <div class="form-group row">
+            <div class="col-sm-4">Parcial 2:</div>
+            <div class="col-sm-5"> <input type="text" class="form-control" name="parcial2" id="parcial2"
+                placeholder="4.1" readonly></div>
+            <div class="col-3"><button type="button" class="btn btn-primary">Editar</button></div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-4">Parcial 3:</div>
+            <div class="col-sm-5"> <input type="text" class="form-control" name="parcial3" id="parcial3"
+                placeholder="4.3" readonly></div>
+            <div class="col-3"><button type="button" class="btn btn-primary">Editar</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header text-center">
+          Tareas
+        </div>
+        <div class="card-body text-center">
+
+
+          <br>
+          <br>
+          <div class="row">
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Index</th>
+                  <th scope="col">id</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Descripción</th>
+                  <th scope="col">fecha</th>
+                  <th scope="col">Calificación</th>
+                  <th scope="col">Acciones</th>
+                  <th scope="col">
+                    <button type="button" class="btn btn-success" data-toggle="modal"
+                      data-target=".modal-add-task">Nueva</button>
+                  </th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngIf="data.cursoTasks.length===0">
+                  <td class="font-italic text-center" colspan="8">
+                    Sin tareas
+                  </td>
+                </tr>
+                <tr *ngFor="let tarea of data.cursoTasks; let i = index">
+                  <th scope="row">{{i}}</th>
+                  <td>{{tarea.idTarea}}</td>
+                  <td>{{tarea.nombre}}</td>
+                  <td>{{tarea.descripcion}}</td>
+                  <td>{{tarea.fecha}}</td>
+                  <td>{{tarea.calificacion}}</td>
+                  <td colspan="2">
+                    <button (click)="editTarea(i)" class="btn btn-primary" data-toggle="modal"
+                      data-target=".modal-edit-task">
+                      Editar
+                    </button>
+                    &nbsp;&nbsp;
+                    <button (click)="deleteTarea(i)" class="btn btn-danger">
+                      Eliminar
+                    </button>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="modal fade modal-add-task" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Agregar tarea</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form>
+              <div class="modal-body">
+
+                <div class="form-row">
+                  <div class="for-group col-md-6">
+                    <label for="nombreTarea">Nombre</label>
+                    <input type="text" name="nombreTarea" [(ngModel)]="modelTarea.nombre" id="nombreTarea"
+                      class="form-control">
+                  </div>
+                  <div class="for-group col-md-3">
+                    <label for="fecha">Fecha de entrega</label>
+                    <input type="date" name="fecha" [(ngModel)]="modelTarea.fecha" id="fecha" class="form-control">
+                  </div>
+                  <div class="for-group col-md-3">
+                    <label for="calificacion">Calificación</label>
+                    <input type="number" name="calificacion" [(ngModel)]="modelTarea.calificacion" id="calificacion"
+                      class="form-control">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <label for="descripcion">Descripción</label>
+                  <textarea rows="2" type="text" name="descripcion" [(ngModel)]="modelTarea.descripcion"
+                    id="descripcion" class="form-control"></textarea>
+                </div>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary" (click)="addTarea()">Guardar</button>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade modal-edit-task" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Editar tarea</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form>
+              <div class="modal-body">
+
+                <div class="form-row">
+                  <div class="for-group col-md-6">
+                    <label for="nombreTarea">Nombre</label>
+                    <input type="text" name="nombreTarea" [(ngModel)]="modelEditTarea.nombre" id="edit-nombreTarea"
+                      class="form-control">
+                  </div>
+                  <div class="for-group col-md-3">
+                    <label for="edit-fecha">Fecha de entrega</label>
+                    <!--- <input type="date" data-date-format="dd/mm/yyyy" name="edit-fecha"
+                      [ngModel]="modelEditTarea.fecha | date:'dd/MM/yyyy'"
+                      (ngModelChange)="modelEditTarea.fecha = $event" id="edit-fecha" class="form-control">
+                      -->
+                    <input type="text" name="edit-fecha" ([ngModel])="modelEditTarea.fecha" id="edit-fecha"
+                      class="form-control">
+                  </div>
+                  <div class="for-group col-md-3">
+                    <label for="calificacion">Calificación</label>
+                    <input type="number" name="calificacion" [(ngModel)]="modelEditTarea.calificacion"
+                      id="edit-calificacion" class="form-control">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <label for="descripcion">Descripción</label>
+                  <textarea rows="2" type="text" name="descripcion" [(ngModel)]="modelEditTarea.descripcion"
+                    id="edit-descripcion" class="form-control"></textarea>
+                </div>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary" (click)="updateTarea()">Guardar</button>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

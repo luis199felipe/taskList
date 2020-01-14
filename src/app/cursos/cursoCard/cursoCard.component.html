@@ -1,0 +1,16 @@
+<div class="col">
+  <div class=" card border-{{cursoCard.color}}" style="max-width: 18rem;">
+    <div class="card-header text-center">
+      <button type="button" [routerLink]="['/curso/',cursoCard.idCurso]" class="btn btn-light">Ver</button>
+      &nbsp;&nbsp;
+      <button type="button" [routerLink]="['/curso/edit/',cursoCard.idCurso]" class="btn btn-light">Editar</button>
+      &nbsp;&nbsp;
+      <button type="button" [routerLink]="['/curso/delete/',cursoCard.idCurso]" class="btn btn-dark">Eliminar</button>
+    </div>
+    <div class="card-body text-{{cursoCard.color}}">
+      <h4 class="card-title ">{{cursoCard.nombre}}</h4>
+      <h6 class="card-text">Profesor:</h6>
+      <div class="card-text">{{cursoCard.profesor}}</div>
+    </div>
+  </div>
+</div>

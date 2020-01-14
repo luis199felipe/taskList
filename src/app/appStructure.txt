@@ -1,0 +1,23 @@
+● src
++---● app
+|   +--● materias
+|   |  |--materias.component.ts|.html|.css
+|   |  +--● curso
+|   |  |  |--curso.component.ts|.html|.css
+|   |  +--● cursoCard
+|   |  |  |--cursoCard.component.ts|.html|.css
+|   |  |
+|   |  +--● shared
+|   |     |--customer.interface.ts
+|   |     |--customer.service.ts
+|   |     |--item.interface.ts
+|   |     |--item.service.ts
+|   |     |--curso.interface.ts
+|   |     |--curso.service.ts
+|   |
+|   |--app.module.ts
+|
++---● environments
+|   |--environment.ts (saved apiUrl)
+|
+|--index.html (cdn path for bootstrap and font awesome icon)

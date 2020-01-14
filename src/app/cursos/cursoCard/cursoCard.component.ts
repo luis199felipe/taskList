@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Curso } from '../curso.interface';
+import { Curso } from '../shared/curso.interface';
 
 
 @Component({
@@ -11,14 +11,14 @@ import { Curso } from '../curso.interface';
 export class CursoCardComponent implements OnInit {
 
   @Input()
-  curso: Curso;
+  cursoCard: Curso;
 
   constructor() {
 
   }
 
   ngOnInit() {
-    console.log('Este es mi nombre ' + this.curso);
+    console.log('Este es mi nombre ' + this.cursoCard);
   }
 
 }

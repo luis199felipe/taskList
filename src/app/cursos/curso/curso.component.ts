@@ -55,7 +55,7 @@ export class CursoComponent implements OnInit {
 
   // tslint:disable-next-line: variable-name
   constructor(private _route: ActivatedRoute, private data: CursoService) {
-    //this.idCurso = parseInt(this._route.snapshot.paramMap.get('id'), 10);
+    let idCurso = parseInt(this._route.snapshot.paramMap.get('id'), 10);
     //console.log("Este es mi curso " + this.miCurso);
     //this.obtenerCurso();
   }

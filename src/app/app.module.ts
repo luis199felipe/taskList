@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -14,6 +15,11 @@ import { CursoCardComponent } from './cursos/cursoCard/cursoCard.component';
 import { CursoService } from './cursos/shared/curso.service';
 import { CursoComponent } from './cursos/curso/curso.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ListadoClientesComponent } from './listado-clientes/listado-clientes.component';
+
+import {NgbdSortableHeader, SortEvent} from './listado-clientes/sortable.directive';
+
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'cursos', pathMatch: 'full' },
@@ -37,16 +43,21 @@ const routes: Routes = [
     HomeComponent,
     CursosComponent,
     CursoCardComponent,
-    CursoComponent
+    CursoComponent,
+    ListadoClientesComponent,
+    NgbdSortableHeader
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
+    NgbModule,
     RouterModule.forRoot(routes)
   ],
-
+  exports:[NgbdSortableHeader,ListadoClientesComponent],
   providers: [CursoService],
+  entryComponents:[ListadoClientesComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

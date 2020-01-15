@@ -1,14 +1,11 @@
-import { Component, OnInit, PipeTransform,QueryList, ViewChildren } from '@angular/core';
+import { Component, QueryList, ViewChildren } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
 import { Observable } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
-import { FormControl } from '@angular/forms';
-
 
 import { Cliente } from "./cliente.interface";
 import { ClienteService } from "./cliente.service";
 
-import {NgbdSortableHeader, SortEvent} from './sortable.directive';
+import { NgbdSortableHeader, SortEvent } from './sortable.directive';
 
 
 @Component({
@@ -17,32 +14,34 @@ import {NgbdSortableHeader, SortEvent} from './sortable.directive';
   styleUrls: ['./listado-clientes.component.css'],
   providers: [ClienteService, DecimalPipe]
 })
-export class ListadoClientesComponent  {
+export class ListadoClientesComponent {
 
   clientes$: Observable<Cliente[]>;
-  
-  total$:Observable<number>;
+  total$: Observable<number>;
 
 
   @ViewChildren(NgbdSortableHeader) headers: QueryList<NgbdSortableHeader>;
 
-  constructor(public clienteService:ClienteService) {
+  constructor(public clienteService: ClienteService) {
     this.clientes$ = clienteService.clientes$;
     this.total$ = clienteService.total$;
   }
 
-
-  onSort({column, direction}: SortEvent) {
+  /**
+   * Metodo encargado de ordenar por columna
+   * @param column Columna seleccionada a ordenar
+   * @param direction sentido para ordenar (asc-desc)
+   */
+  onSort({ column, direction }: SortEvent) {
     console.log("Entro a onSort");
     // resetting other headers
     this.headers.forEach(header => {
-      console.log(column+" Header sortable "+ header.sortable);
+      //console.log(column+" Header sortable "+ header.sortable);
       if (header.sortable !== column) {
         header.direction = '';
       }
     });
-    console.log(column+" "+direction);
-    
+    console.log(column + " " + direction);
     this.clienteService.sortColumn = column;
     this.clienteService.sortDirection = direction;
 

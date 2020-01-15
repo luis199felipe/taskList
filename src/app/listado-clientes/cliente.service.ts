@@ -9,10 +9,24 @@ import { debounceTime, delay, switchMap, tap } from 'rxjs/operators';
 
 import { SortDirection } from './sortable.directive';
 
+/**
+ * Interface que define la estructura de una busqueda.
+ * @Cliente[] Listado de clientes a buscar
+ * @total cantidad de clientes que resultaron en la busqueda
+ */
 interface SearchResult {
   clientes: Cliente[];
   total: number;
 }
+
+/**
+ * Interface que define el estado de una tabla
+ * @att page posicion actual de la pagina.
+ * @att pageSize cantidad de paginas de la tabla
+ * @att seachTerm Vinculo que se tiene con el html para buscar un termino
+ * @att sortColumn Columna con la cual ha sido ordenada la tabla.
+ * @att sortDirection Direccion (asc - desc) la cual ha sido ordenada la tabla.
+ */
 
 interface State {
   page: number;
@@ -22,11 +36,22 @@ interface State {
   sortDirection: SortDirection;
 }
 
+/**
+ * Metodo para comparar dos atributos de dos clientes
+ * @param v1 atributo 1 del cliente
+ * @param v2 atributo 2 del cliente
+ */
 function compare(v1, v2) {
   //console.log(v1 + " " + v2);
   return v1 < v2 ? -1 : v1 > v2 ? 1 : 0;
 }
 
+/**
+ * Metodo encargardo de ordenar (asc-desc) por columna los registros de la tabla
+ * @param clientes Array de clientes actual en la tabla
+ * @param column Columna seleccionada para ordenar
+ * @param direction Direccion escogida a ordenar (asc-desc)
+ */
 function sort(clientes: Cliente[], column: string, direction: string): Cliente[] {
   //console.log("Entro a sort de service "+column+" "+direction +" "+clientes)
   if (direction === '') {
@@ -34,29 +59,19 @@ function sort(clientes: Cliente[], column: string, direction: string): Cliente[]
   } else {
 
     return [...clientes].sort((a, b) => {
-      console.log("Dentro de return" + mostrarPropiedades(a, "a"));
+      //console.log("Dentro de return" + mostrarPropiedades(a, "a"));
       const res = compare(a[column], b[column]);
       return direction === 'asc' ? res : -res;
     });
   }
 }
 
-
-function mostrarPropiedades(objeto, nombreObjeto) {
-  let resultado = ``;
-  for (let i in objeto) {
-    //objeto.hasOwnProperty se usa para filtrar las propiedades del objeto
-    if (objeto.hasOwnProperty(i)) {
-      resultado += `${nombreObjeto}.${i} = ${objeto[i]}\n`;
-    }
-  }
-  return resultado;
-}
-/*
-Funcion encargada de buscar en los registros de la tabla un texto especifico
-@text: texto a buscar
-@pipe: metodo para transformar numeros en string
-*/
+/**
+ * Funcion encargada buscar un texto especifico en un cliente
+ * @param cliente Cliente individual a comprar el termino
+ * @param term  texto a buscar
+ * @param pipe metodo para transformar numeros en string
+ */
 function matches(cliente: Cliente, term: string, pipe: PipeTransform): Cliente[] {
   // Se filtran los clientes por nombre, cedula,estado,celular,cupo y id
   //console.log("nombre "+cliente.nombre);

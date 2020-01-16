@@ -1,0 +1,66 @@
+<br>
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <div class="row">
+        <div class="col-sm-12">
+          <h5>Nuevo crédito</h5>
+        </div>
+
+      </div>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="myForm" (ngSubmit)="saveData()" novalidate>
+        <div class="form-row">
+          <div class="form-group col-sm-8">
+            <label for="valor"><strong>Valor del crédito:</strong></label>
+            <input type="number" min="1" class="form-control" name="valor" formControlName="valor" placeholder="0">
+            <!--<p style="color:tomato" *ngIf="myForm.get('valor').hasError('required')">Campo requerido</p>-->
+          </div>
+        </div>
+        <hr>
+        <div class="form-row">
+          <div class="form-group col-sm-4">
+            <label for="duracion"><strong>Duración:</strong></label>
+            <input type="number" class="form-control" name="duracion" min="1" formControlName="duracion"
+              placeholder="4">
+          </div>
+          <div class="form-group col-sm-4" style="margin-top: 2em;">
+            <select class="custom-select" name="selectDuracion" formControlName="selectDuracion">
+              <option value="0" selected>Meses</option>
+              <option value="1">Años</option>
+            </select>
+          </div>
+        </div>
+        <hr>
+        <div class="form-row">
+          <div class="form-group col-sm-4">
+            <label><strong>Pagos:</strong></label>
+            <p>Ciclos de amorización:</p>
+          </div>
+          <div class="form-group col-sm-4 abs-center">
+            <select class="custom-select" name="selectCiclos" formControlName="selectCiclos">
+              <option value="0" selected>Quincenal</option>
+              <option value="1">Mensual</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-sm-4">
+
+            <p>Fecha del primer abono:</p>
+          </div>
+          <div class="form-group col-sm-4 abs-center">
+            <input type="date" class="form-control" name="fechaPrimerAbono" formControlName="fechaPrimerAbono"
+              id="primerAbono" min="{{ hoy | date:'yyyy-MM-dd'}}">
+          </div>
+        </div>
+        <div class="form-row">
+          <button class="btn btn-success" type="submit">Guardar</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+</div>

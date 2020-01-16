@@ -18,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListadoClientesComponent } from './listado-clientes/listado-clientes.component';
 
 import {NgbdSortableHeader, SortEvent} from './listado-clientes/sortable.directive';
+import { NuevoCreditoComponent } from './nuevo-credito/nuevo-credito.component';
 
 
 
@@ -45,7 +46,8 @@ const routes: Routes = [
     CursoCardComponent,
     CursoComponent,
     ListadoClientesComponent,
-    NgbdSortableHeader
+    NgbdSortableHeader,
+    NuevoCreditoComponent
   ],
   imports: [
     BrowserModule,

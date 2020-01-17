@@ -2,8 +2,8 @@ import { Injectable, PipeTransform } from '@angular/core';
 
 import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
 
-import { Cliente } from './cliente.interface';
-import { CLIENTES } from './clientes';
+import { Credito } from './credito.interface';
+import { CREDITOS } from './creditos';
 import { DecimalPipe } from '@angular/common';
 import { debounceTime, delay, switchMap, tap } from 'rxjs/operators';
 
@@ -11,11 +11,11 @@ import { SortDirection } from './sortable.directive';
 
 /**
  * Interface que define la estructura de una busqueda.
- * @Cliente[] Listado de clientes a buscar
- * @total cantidad de clientes que resultaron en la busqueda
+ * @Credito[] Listado de creditos a buscar
+ * @total cantidad de creditos que resultaron en la busqueda
  */
 interface SearchResult {
-  clientes: Cliente[];
+  creditos: Credito[];
   total: number;
 }
 
@@ -37,9 +37,9 @@ interface State {
 }
 
 /**
- * Metodo para comparar dos atributos de dos clientes
- * @param v1 atributo 1 del cliente
- * @param v2 atributo 2 del cliente
+ * Metodo para comparar dos atributos de dos creditos
+ * @param v1 atributo 1 del credito
+ * @param v2 atributo 2 del credito
  */
 function compare(v1, v2) {
   //console.log(v1 + " " + v2);
@@ -48,17 +48,17 @@ function compare(v1, v2) {
 
 /**
  * Metodo encargardo de ordenar (asc-desc) por columna los registros de la tabla
- * @param clientes Array de clientes actual en la tabla
+ * @param creditos Array de creditos actual en la tabla
  * @param column Columna seleccionada para ordenar
  * @param direction Direccion escogida a ordenar (asc-desc)
  */
-function sort(clientes: Cliente[], column: string, direction: string): Cliente[] {
-  //console.log("Entro a sort de service "+column+" "+direction +" "+clientes)
+function sort(creditos: Credito[], column: string, direction: string): Credito[] {
+  //console.log("Entro a sort de service "+column+" "+direction +" "+creditos)
   if (direction === '') {
-    return clientes;
+    return creditos;
   } else {
 
-    return [...clientes].sort((a, b) => {
+    return [...creditos].sort((a, b) => {
       //console.log("Dentro de return" + mostrarPropiedades(a, "a"));
       const res = compare(a[column], b[column]);
       return direction === 'asc' ? res : -res;
@@ -67,30 +67,30 @@ function sort(clientes: Cliente[], column: string, direction: string): Cliente[]
 }
 
 /**
- * Funcion encargada buscar un texto especifico en un cliente
- * @param cliente Cliente individual a comprar el termino
+ * Funcion encargada buscar un texto especifico en un credito
+ * @param credito Credito individual a comprar el termino
  * @param term  texto a buscar
  * @param pipe metodo para transformar numeros en string
  */
-function matches(cliente: Cliente, term: string, pipe: PipeTransform): Cliente[] {
-  // Se filtran los clientes por nombre, cedula,estado,celular,cupo y id
-  //console.log("nombre "+cliente.nombre);
-  let term2 = term.toLocaleLowerCase();
-  return cliente.nombre.toLowerCase().includes(term2)
-    || cliente.estado.toLowerCase().includes(term)
-    || cliente.celular.includes(term)
-    || cliente.cedula.includes(term)
-    || pipe.transform(cliente.id).includes(term)
-    || pipe.transform(cliente.cupo).includes(term);
+function matches(credito: Credito, term: string, pipe: PipeTransform): Credito[] {
+  // Se filtran los creditos por nombre, cedula,estado,celular,cupo y id
+  //console.log("nombre "+credito.nombre);
+  const term2 = term.toLocaleLowerCase();
+  return credito.cliente.toLowerCase().includes(term2)
+    || credito.estado.toLowerCase().includes(term)
+    || credito.codigoOTP.includes(term)
+    || credito.fechaAprovacion.includes(term)
+    || pipe.transform(credito.valorCredito).includes(term)
+    || pipe.transform(credito.valorCuota).includes(term);
 
 }
 
 
 @Injectable({ providedIn: 'root' })
-export class ClienteService {
+export class CreditoService {
   private _loading$ = new BehaviorSubject<boolean>(true);
   private _search$ = new Subject<void>();
-  private _clientes$ = new BehaviorSubject<Cliente[]>([]);
+  private _creditos$ = new BehaviorSubject<Credito[]>([]);
   private _total$ = new BehaviorSubject<number>(0);
 
   private _state: State = {
@@ -109,14 +109,14 @@ export class ClienteService {
       delay(200),
       tap(() => this._loading$.next(false))
     ).subscribe(result => {
-      this._clientes$.next(result.clientes);
+      this._creditos$.next(result.creditos);
       this._total$.next(result.total);
     });
 
     this._search$.next();
   }
 
-  get clientes$() { return this._clientes$.asObservable(); }
+  get creditos$() { return this._creditos$.asObservable(); }
   get total$() { return this._total$.asObservable(); }
   get loading$() { return this._loading$.asObservable(); }
   get page() { return this._state.page; }
@@ -138,14 +138,14 @@ export class ClienteService {
     const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state;
 
     // 1. sort
-    let clientes = sort(CLIENTES, sortColumn, sortDirection);
+    let creditos = sort(CREDITOS, sortColumn, sortDirection);
 
     // 2. filter
-    clientes = clientes.filter(cliente => matches(cliente, searchTerm, this.pipe));
-    const total = clientes.length;
+    creditos = creditos.filter(credito => matches(credito, searchTerm, this.pipe));
+    const total = creditos.length;
 
     // 3. paginate
-    clientes = clientes.slice((page - 1) * pageSize, (page - 1) * pageSize + pageSize);
-    return of({ clientes, total });
+    creditos = creditos.slice((page - 1) * pageSize, (page - 1) * pageSize + pageSize);
+    return of({ creditos, total });
   }
 }

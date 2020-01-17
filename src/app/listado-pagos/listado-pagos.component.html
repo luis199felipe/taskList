@@ -1,0 +1,103 @@
+<br>
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <div class="row">
+        <div class="col-sm-10">
+          <h4>Pagos</h4>
+        </div>
+        <!--
+        <div class="col-sm-2">
+          <button type="button" class="btn btn-success">
+            Añadir pago
+          </button>
+        </div>
+
+-->
+      </div>
+    </div>
+    <div class="card-body">
+      <form>
+        <div class="row">
+
+          <div class="col-sm-10 form-group form-inline">
+            Buscar: <input class="form-control ml-2" type="text" name="searchTerm"
+              [(ngModel)]="pagoService.searchTerm" />
+            <span class="ml-3" *ngIf="pagoService.loading$ | async"> Cargando...</span>
+
+          </div>
+          <div class="col-sm-2 col-lg-2">
+            <select class="custom-select" style="width: auto" name="pageSize" [(ngModel)]="pagoService.pageSize">
+              <option [ngValue]="2">2 items per page</option>
+              <option [ngValue]="4">4 items per page</option>
+              <option [ngValue]="6">6 items per page</option>
+            </select>
+          </div>
+        </div>
+
+        <table class="table table-striped" style="text-align: center;" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th scope="col" sortable="credito" (sort)="onSort($event)">Credito <img width="20px"
+                  src="/assets/img/arrow.png" alt="Ordenar por credito"> </th>
+              <th scope="col" sortable="informesFecha" (sort)="onSort($event)">informes de Fecha <img width="20px"
+                  src="/assets/img/arrow.png" alt="Ordenar por fecha informes "> </th>
+              <th scope="col" sortable="cliente" (sort)="onSort($event)">Cliente <img width="20px"
+                  src="/assets/img/arrow.png" alt="Ordenar por cliente"> </th>
+              <th scope="col" sortable="almacen" (sort)="onSort($event)">Almacen <img width="20px"
+                  src="/assets/img/arrow.png" alt="Ordenar por almacen"> </th>
+              <th scope="col" sortable="recogido" (sort)="onSort($event)">Recogido por <img width="20px"
+                  src="/assets/img/arrow.png" alt="Ordenar por recogido"> </th>
+              <th scope="col" sortable="valor" (sort)="onSort($event)">Valor <img width="20px"
+                  src="/assets/img/arrow.png" alt="Ordenar por valor"> </th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let pago of pagos$ | async; index as i">
+              <th scope="row">{{ i + 1 }}</th>
+              <th>
+                <ngb-highlight [result]="pago.credito" [term]="pagoService.searchTerm"></ngb-highlight>
+              </th>
+              <th>
+                <ngb-highlight [result]="pago.informesFecha" [term]="pagoService.searchTerm"></ngb-highlight>
+              </th>
+              <th>
+                <ngb-highlight [result]="pago.cliente" [term]="pagoService.searchTerm"></ngb-highlight>
+              </th>
+              <th>
+                <ngb-highlight [result]="pago.almacen" [term]="pagoService.searchTerm"></ngb-highlight>
+              </th>
+              <th>
+                <ngb-highlight [result]="pago.recogido" [term]="pagoService.searchTerm"></ngb-highlight>
+              </th>
+              <th>
+                <ngb-highlight [result]="pago.valor" [term]="pagoService.searchTerm"></ngb-highlight>
+              </th>
+              <th>
+                <a href="" title="Detalles">
+                  <svg id="i-search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32"
+                    fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                    <circle cx="14" cy="14" r="12" />
+                    <path d="M23 23 L30 30" />
+                  </svg>
+                </a>
+              </th>
+            </tr>
+
+          </tbody>
+        </table>
+        <div class="d-flex justify-content-between p-2">
+          <ngb-pagination [collectionSize]="total$ | async" [(page)]="pagoService.page"
+            [pageSize]="pagoService.pageSize">
+          </ngb-pagination>
+
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+</div>

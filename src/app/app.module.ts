@@ -17,8 +17,10 @@ import { CursoComponent } from './cursos/curso/curso.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListadoClientesComponent } from './listado-clientes/listado-clientes.component';
 
-import {NgbdSortableHeader, SortEvent} from './listado-clientes/sortable.directive';
+import { NgbdSortableHeader, SortEvent } from './listado-clientes/sortable.directive';
 import { NuevoCreditoComponent } from './nuevo-credito/nuevo-credito.component';
+import { ListadoCreditosComponent } from './listado-creditos/listado-creditos.component';
+import { ListadoPagosComponent } from './listado-pagos/listado-pagos.component';
 
 
 
@@ -47,7 +49,9 @@ const routes: Routes = [
     CursoComponent,
     ListadoClientesComponent,
     NgbdSortableHeader,
-    NuevoCreditoComponent
+    NuevoCreditoComponent,
+    ListadoCreditosComponent,
+    ListadoPagosComponent
   ],
   imports: [
     BrowserModule,
@@ -57,9 +61,9 @@ const routes: Routes = [
     NgbModule,
     RouterModule.forRoot(routes)
   ],
-  exports:[NgbdSortableHeader,ListadoClientesComponent],
+  exports: [NgbdSortableHeader, ListadoClientesComponent],
   providers: [CursoService],
-  entryComponents:[ListadoClientesComponent],
+  entryComponents: [ListadoClientesComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

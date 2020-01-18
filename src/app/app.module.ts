@@ -26,6 +26,7 @@ import { ListadoPagosComponent } from './listado-pagos/listado-pagos.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'cursos', pathMatch: 'full' },
+  { path: 'creditos', component: ListadoCreditosComponent },
   { path: 'home', component: HomeComponent },
   { path: 'cursos', component: CursosComponent },
   {
@@ -57,7 +58,7 @@ const routes: Routes = [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule,
+
     NgbModule,
     RouterModule.forRoot(routes)
   ],

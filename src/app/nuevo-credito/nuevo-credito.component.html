@@ -18,8 +18,8 @@
         <div class="card">
           <div class="card-header" id="headingOne">
             <h5 class="mb-0">
-              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                aria-controls="collapseOne">
+              <button class="btn btn-link" id="btnForm" data-toggle="collapse" data-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
                 Formulario de credito
               </button>
             </h5>
@@ -29,24 +29,36 @@
             data-parent="#accordion">
             <div class="card-body">
 
-              <form [formGroup]="myForm" (ngSubmit)="saveData()" novalidate>
+              <form [formGroup]="myForm" (ngSubmit)="continue()" novalidate>
                 <div class="form-row">
-                  <div class="form-group col-sm-8">
+                  <div class="form-group col-sm-6">
                     <label for="valor"><strong>Valor del crédito:</strong></label>
-                    <input type="number" min="1" class="form-control" name="valor" formControlName="valor"
-                      placeholder="1">
+                    <input type="number" min="1" class="form-control" name="valor" formControlName="valor" required>
+                  </div>
+                  <div class="col-sm-6">
+                    <label for=""> &nbsp; </label>
                     <p style="color:tomato" *ngIf="myForm.get('valor').hasError('required')">Campo requerido</p>
+                    <p style="color:tomato" *ngIf="myForm.get('valor').errors?.invalidRange">El rango es invalido. Debe
+                      ingresar una cifra entre {{valorMinimo}} y {{valorMaximo}} </p>
+
                   </div>
                 </div>
                 <hr>
                 <div class="form-row">
                   <div class="form-group col-sm-6">
                     <label for="duracion"><strong>Duración:</strong></label>
-                    <input type="number" class="form-control" name="duracion" min="1" formControlName="duracion"
-                      value="1">
+                    <input type="number" class="form-control" name="duracion" required min="1"
+                      formControlName="duracion" value="1">
                   </div>
                   <div class="form-group col-sm-2" style="margin-top: 2em;">
                     <input readonly value="Meses" class="form-control" type="text">
+                  </div>
+                  <div class="col-sm-4">
+                    <label for=""> &nbsp; </label>
+                    <p style="color:tomato" *ngIf="myForm.get('duracion').hasError('required')">Campo requerido</p>
+                    <p style="color:tomato" *ngIf="myForm.get('duracion').errors?.invalidRange">El rango es invalido.
+                      Debe
+                      ingresar una cifra entre 1 y {{duracionMaxima}} meses</p>
                   </div>
                 </div>
                 <hr>
@@ -56,24 +68,37 @@
                     <p>Ciclos de amorización:</p>
                   </div>
                   <div class="form-group col-sm-4 abs-center">
-                    <select class="custom-select" name="selectCiclos" formControlName="selectCiclos">
-                      <option value="0" selected>Quincenal</option>
-                      <option value="1">Mensual</option>
+
+                    <select class="custom-select" formControlName="selectCiclos" required>
+
+                      <option *ngFor="let option of ciclos" [ngValue]="option.id">{{option.valor}}</option>
                     </select>
+
+                    <div class="col-sm-4">
+                      <label for=""> &nbsp; </label>
+                      <p style="color:tomato" *ngIf="myForm.get('selectCiclos').hasError('required')">Campo requerido
+                      </p>
+                    </div>
                   </div>
                 </div>
                 <div class="form-row">
                   <div class="form-group col-sm-4">
-
                     <p>Fecha del primer abono:</p>
                   </div>
                   <div class="form-group col-sm-4 abs-center">
-                    <input type="date" class="form-control" name="fechaPrimerAbono" formControlName="fechaPrimerAbono"
-                      id="primerAbono" min="{{ hoy | date:'yyyy-MM-dd'}}">
+                    <input required type="date" class="form-control" name="fechaPrimerAbono"
+                      formControlName="fechaPrimerAbono" min="{{ hoy | date:'yyyy-MM-dd'}}">
+                  </div>
+                  <div class="col-sm-4">
+                    <label for=""> &nbsp; </label>
+                    <p style="color:tomato" *ngIf="myForm.get('fechaPrimerAbono').hasError('required')">Campo requerido
+                    </p>
+                    <p style="color:tomato" *ngIf="myForm.get('fechaPrimerAbono').errors?.invalidRange">El rango es
+                      invalido.Debe estar en los siguientes 30 días</p>
                   </div>
                 </div>
                 <div class="form-row">
-                  <button class="btn btn-success" type="submit">Guardar</button>
+                  <button class="btn btn-success" type="submit">Continuar</button>
                 </div>
               </form>
 
@@ -86,25 +111,26 @@
           <div class="card-header" id="headingTwo">
             <h5 class="mb-0">
               <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
-                aria-controls="collapseTwo">
+                aria-controls="collapseTwo" id="btnForm2" #btnForm2>
                 Datos de creación del credito
               </button>
             </h5>
           </div>
 
-          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+          <div id="collapseTwo" #collapseTwo id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+            data-parent="#accordion">
             <div class="card-body">
 
               <form [formGroup]="myForm2" (ngSubmit)="saveData()" novalidate>
                 <div class="form-row">
                   <div class="form-group col-sm-6">
                     <label for="valor"><strong>Valor del crédito:</strong></label>
-                    <input type="number" min="1" readonly class="form-control" name="valor" formControlName="valor"
-                      placeholder="1">
+                    <input type="number" min="1" readonly class="form-control" name="valorRO" formControlName="valorRO">
                   </div>
                   <div class="form-group col-sm-6">
                     <label for="duracion"><strong>Duración:</strong></label>
-                    <input type="text" readonly class="form-control" value="2 Meses" name="duracion" min="1">
+                    <input type="text" readonly class="form-control" value="" formControlName="duracionRO"
+                      name="duracionRO" min="1">
                   </div>
                 </div>
                 <hr>
@@ -115,20 +141,27 @@
                     <p>Ciclos de amorización:</p>
                   </div>
                   <div class="form-group col-sm-4 abs-center">
-                    <input type="text" readonly class="form-control" value="Quincenal" name="duracion" min="1">
+                    <input type="text" readonly class="form-control" formControlName="selectCiclosRO"
+                      name="selectCiclosRO">
                   </div>
                   <div class="form-group col-sm-2 abs-center">
 
                     <p>Fecha del primer abono:</p>
                   </div>
                   <div class="form-group col-sm-4 abs-center">
-                    <input type="date" class="form-control" name="fechaPrimerAbono" formControlName="fechaPrimerAbono"
-                      id="primerAbono" readonly min="{{ hoy | date:'yyyy-MM-dd'}}">
+                    <input type="date" class="form-control" name="fechaPrimerAbonoRO"
+                      formControlName="fechaPrimerAbonoRO" id="primerAbonoRO" readonly
+                      min="{{ hoy | date:'yyyy-MM-dd'}}">
                   </div>
                 </div>
 
                 <div class="form-row">
-                  <button class="btn btn-success" type="submit">Guardar</button>
+                  <div class="form-group col-sm-1">
+                    <button class="btn btn-success" type="submit">Guardar</button>
+                  </div>
+                  <div class="form-group col-sm-2">
+                    <button class="btn btn-secondary" type="button" (click)="habilitarForm()">Editar</button>
+                  </div>
                 </div>
               </form>
 
@@ -140,6 +173,27 @@
 
     </div>
 
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="modalError" tabindex="-1" role="dialog" aria-labelledby="modalErrorTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Error</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Por favor corrija los errores antes de continuar.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
   </div>
 
 </div>

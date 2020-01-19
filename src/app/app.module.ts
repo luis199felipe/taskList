@@ -21,7 +21,8 @@ import { NgbdSortableHeader, SortEvent } from './listado-clientes/sortable.direc
 import { NuevoCreditoComponent } from './nuevo-credito/nuevo-credito.component';
 import { ListadoCreditosComponent } from './listado-creditos/listado-creditos.component';
 import { ListadoPagosComponent } from './listado-pagos/listado-pagos.component';
-
+import { PerfilClienteComponent } from "./perfil-cliente/perfil-cliente.component";
+import { FormPerfilClienteComponent } from './perfil-cliente/form-perfil-cliente/form-perfil-cliente.component';
 
 
 const routes: Routes = [
@@ -52,13 +53,15 @@ const routes: Routes = [
     NgbdSortableHeader,
     NuevoCreditoComponent,
     ListadoCreditosComponent,
-    ListadoPagosComponent
+    ListadoPagosComponent,
+    PerfilClienteComponent,
+    FormPerfilClienteComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-
+    ReactiveFormsModule,
     NgbModule,
     RouterModule.forRoot(routes)
   ],

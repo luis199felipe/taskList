@@ -2,7 +2,7 @@
 
 export interface Pago {
 
-
+  id: number;
   cliente: string;
   credito: number;
   valor: number;

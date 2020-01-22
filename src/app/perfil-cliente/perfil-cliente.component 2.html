@@ -1,0 +1,85 @@
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid">
+
+
+  <div class="col-sm-10">
+    <div class="col-sm-2" style="align-items: center;">
+
+      <div class="card" style="width: 18rem;">
+        <img src="/assets/img/userLogo.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h4 class="card-title">{{perfilActual.nombre}}</h4>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><strong>C.C</strong>:&nbsp;&nbsp;&nbsp;&nbsp;{{perfilActual.cedula}}</li>
+          <li class="list-group-item"><strong>Celular</strong>:&nbsp;&nbsp;&nbsp;&nbsp;{{perfilActual.celular}}</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <form [formGroup]="form">
+      <div class="form-component-container">
+        <div class="panel panel-default form component main">
+          <div class="panel-heading">
+            <div class="card">
+              <div class="card-header">
+                <ul id="rowTab" class="nav nav-tabs card-header-tabs">
+
+                  <li class="nav-item active"><a class="nav-link active" data-toggle="tab" href="#tabPerfil">Perfil</a>
+                  </li>
+                  <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#tabCreditos">Creditos</a></li>
+                  <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#tabPagos">Pagos</a></li>
+                  <li class="nav-item"><a class="nav-link disabled" data-toggle="tab" href="#tabInformes">Informes</a>
+                  </li>
+
+                </ul>
+
+              </div>
+
+              <div class="card-body">
+                <div class="tab-content">
+                  <div id="tabPerfil" class="tab-pane active">
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <h3>Cupo disponible: ( ${{perfilActual.cupo}} )</h3>
+                      </div>
+                      <div class="col-sm-6">
+                        <h3>Estado: {{perfilActual.estado}}</h3>
+                      </div>
+                    </div>
+                    <hr>
+                    <app-form-perfil-cliente></app-form-perfil-cliente>
+                  </div>
+                  <div id="tabCreditos" class="tab-pane fade">
+                    <app-listado-creditos></app-listado-creditos>
+                  </div>
+                  <div id="tabPagos" class="tab-pane fade">
+                    <app-listado-pagos></app-listado-pagos>
+                  </div>
+                  <div id="tabInformes" class="tab-pane fade">
+
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

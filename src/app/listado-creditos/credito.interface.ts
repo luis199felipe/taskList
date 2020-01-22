@@ -1,7 +1,7 @@
 
 
 export interface Credito {
-
+  id: number,
   cliente: string;
   valorCredito: number;
   valorCuota: number;

@@ -2,6 +2,7 @@ import { Pago } from './pago.interface';
 
 export const PAGOS: Pago[] = [
   {
+    id: 20,
     cliente: 'Julian Perez',
     credito: 350000,
     valor: 62000,
@@ -10,6 +11,7 @@ export const PAGOS: Pago[] = [
     almacen: 'Centro'
   },
   {
+    id: 23,
     cliente: 'Juan Padilla',
     credito: 3960000,
     valor: 270300,
@@ -18,6 +20,7 @@ export const PAGOS: Pago[] = [
     almacen: 'Norte'
   },
   {
+    id: 40,
     cliente: 'Jhon Ariza',
     credito: 1000000,
     valor: 120000,
@@ -26,6 +29,7 @@ export const PAGOS: Pago[] = [
     almacen: 'centro'
   },
   {
+    id: 12,
     cliente: 'Oscar Lozano',
     credito: 9500000,
     valor: 850000,
@@ -34,6 +38,7 @@ export const PAGOS: Pago[] = [
     almacen: 'Sur'
   },
   {
+    id: 35,
     cliente: 'Daniela Sanchez',
     credito: 2560000,
     valor: 120000,
@@ -42,6 +47,7 @@ export const PAGOS: Pago[] = [
     almacen: 'Norte'
   },
   {
+    id: 75,
     cliente: 'Alexandra Rios',
     credito: 450000,
     valor: 60200,

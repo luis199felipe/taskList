@@ -51,7 +51,7 @@
                   src="/assets/img/arrow.png"> </th>
               <th scope="col" sortable="estado" (sort)="onSort($event)">Estado<img width="20px"
                   src="/assets/img/arrow.png"> </th>
-
+              <th scope="col">Acciones</th>
             </tr>
           </thead>
 
@@ -81,7 +81,24 @@
               <th>
                 <ngb-highlight [result]="credito.estado" [term]="creditoService.searchTerm"></ngb-highlight>
               </th>
-
+              <th>
+                <a href="" title="Detalles">
+                  <svg id="i-search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32"
+                    fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                    <circle cx="14" cy="14" r="12" />
+                    <path d="M23 23 L30 30" />
+                  </svg>
+                </a>&nbsp;
+                <a href="" title="Añadir pago">
+                  <img width="30px" src="https://img.icons8.com/officel/30/000000/request-money.png">
+                </a>&nbsp;
+                <a href="" title="Imprimir estado">
+                  <img width="30px" src="https://img.icons8.com/office/30/000000/feed-paper.png">
+                </a>&nbsp;
+                <a href="" title="Pago completo">
+                  <img width="30px" src="https://img.icons8.com/dusk/30/000000/request-money.png">
+                </a>
+              </th>
             </tr>
 
           </tbody>

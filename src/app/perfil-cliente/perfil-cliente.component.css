@@ -1,10 +1,10 @@
 .user-image {
-  margin-top: -7em;
-  margin-bottom: 1em;
+  margin-left: -7em;
+  margin-top: 5em;
 }
 
 .user-image img {
-  height: 180px;
-  widows: 180px;
-  border-radius: 5px;
+  height: 200px;
+  widows: 200px;
+  border-radius: 50%;
 }

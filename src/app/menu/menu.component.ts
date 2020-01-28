@@ -32,7 +32,7 @@ export class MenuComponent implements OnInit {
 
       if (cedula === term) {
         //AQUI DEBE PONER LA DIRECCION A LA CUAL QUIERA REDIRIGIR EL CLIENTE ["cliente",this.optionsClientes[0].id]
-        this.router.navigate(["curso", term]);
+        this.router.navigate(["curso", this.optionsClientes[0].id]);
       }
     } else {
       $('#buttonCrearCliente').removeAttr('hidden');
